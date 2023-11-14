@@ -7,7 +7,7 @@ import { InvoicesTableSkeleton } from '@/app/ui/skeletons';
 import { Suspense } from 'react';
 import { fetchInvoicesPages } from '@/app/lib/data';
  
-export default async function Page({
+export default async function whateveryouwant({
   searchParams,
 }: {
   searchParams?: {
@@ -15,7 +15,7 @@ export default async function Page({
     page?: string;
   };
 }) {
-
+  console.log(JSON.stringify(searchParams || {} , null, 2))
   const query = searchParams?.query || '';
   const currentPage = Number(searchParams?.page) || 1;
   const totalPages = await fetchInvoicesPages(query);
